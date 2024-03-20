@@ -89,3 +89,41 @@ struct word_t** read_words(const char* filename, enum error_t* errcode) {
     *errcode = ERROR_OK;
     return words;
 }
+void delete_words(struct word_t** tab) {
+    if (tab != NULL) {
+        int i = 0;
+        while (*(tab+i)) {
+            free((*(tab+i))->text_pl);
+            free((*(tab+i))->text_en);
+            free(*(tab+i));
+            i++;
+        }
+        free(tab);
+    }
+}
+char** translate_words( struct word_t** tab, int n, ...) {
+    if (tab == NULL || n <= 0) {
+        return NULL;
+    }
+    char ** translate= malloc(sizeof (char *) *(n+1));
+    if(translate==NULL){
+        return NULL;
+    }
+    va_list args;
+    va_start(args,n);
+    for (int i = 0; i < n; ++i) {
+        char * one_w= va_arg(args,char *);
+        for (int j = 0; *(tab+j) != NULL; ++j) {
+            if(strcmp((*(tab+j))->text_pl ,one_w)==0){
+                *(translate+i)=(*(tab+j))->text_en;
+                break;
+
+            } else {
+                *(translate+i)=NULL;
+            }
+        }
+    }
+    va_end(args);
+    *(translate+n)=NULL;
+    return translate;
+}

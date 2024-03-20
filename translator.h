@@ -1,0 +1,8 @@
+//
+// Created by kasia on 20.03.2024.
+//
+
+#ifndef TRANSLATOR_TRANSLATOR_H
+#define TRANSLATOR_TRANSLATOR_H
+
+#endif //TRANSLATOR_TRANSLATOR_H

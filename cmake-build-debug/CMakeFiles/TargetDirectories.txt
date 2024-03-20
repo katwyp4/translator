@@ -1,0 +1,3 @@
+C:/Users/kasia/Desktop/c/translator/cmake-build-debug/CMakeFiles/translator.dir
+C:/Users/kasia/Desktop/c/translator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/kasia/Desktop/c/translator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
